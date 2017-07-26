@@ -1,6 +1,12 @@
 
+
 var express = require('express');
+
 var hbs = require('hbs');
+
+hbs.registerHelper('currentDate', function(){
+    return new Date().toString();
+});
 hbs.registerPartials(__dirname+'/views/partial');
 
 var app = express();
